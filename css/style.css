@@ -34,8 +34,8 @@ a{color:inherit}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:inherit}
 .btn-dark{background:var(--on-mint);color:#F6F8F5}
 .btn-line{border-color:currentColor;background:transparent;color:inherit}
-.dots{display:inline-flex;gap:4px}
-.dots i{width:11px;height:11px;border-radius:50%;display:block}
+
+
 
 .demo{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding-block:6px}
 
@@ -234,3 +234,11 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 .hero{display:flex;align-items:center}
 .hero .wrap{width:100%}
 .hero figure img{max-height:640px}
+.logo-icons{display:inline-flex;gap:3px;flex-shrink:0}
+.logo-icons img{width:26px;height:26px}
+@media (max-width:420px){.logo-icons img{width:20px;height:20px}}
+.area-card .ico{width:44px;height:44px;margin-bottom:4px}
+.foot-top{padding-block:28px 0!important}
+.foot-logo{background:#fff;border-radius:12px;padding:10px 16px;width:min(280px,100%);height:auto}
+footer .wrap.foot-top+.wrap{padding-top:18px}
+@media (min-width:901px){.links{gap:22px}}
