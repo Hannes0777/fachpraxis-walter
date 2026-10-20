@@ -70,6 +70,19 @@
   }
 
 
+  // Sprungmarken: nach dem Laden (Bilder, Schriften) die Zielposition nachkorrigieren
+  var touched=false;
+  ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){window.addEventListener(ev,function(){touched=true;},{passive:true,once:true});});
+  var fixHash=function(){
+    if(touched||!location.hash) return;
+    var t=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if(!t) return;
+    var de=document.documentElement, old=de.style.scrollBehavior; de.style.scrollBehavior='auto';
+    t.scrollIntoView(); de.style.scrollBehavior=old;
+  };
+  window.addEventListener('load',function(){setTimeout(fixHash,120);setTimeout(fixHash,700);});
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){setTimeout(fixHash,50);});
+
   // Suche (Index wird beim ersten Öffnen geladen)
   var sBox=document.getElementById('search'), sBtn=document.getElementById('searchBtn');
   if(sBox&&sBtn){
@@ -136,7 +149,7 @@
     var sel='.sec-head,.area-card,.steps>li,.photo,.three>.card,.split>div,.more>div,.price,.form-grid>*,.career .wrap';
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
     document.querySelectorAll('main '+sel.split(',').join(',main ')).forEach(function(el){
-      if(el.closest('.hero')) return;
+      if(el.closest('.hero')||el.id) return;
       var sibs=el.parentNode.children, idx=Array.prototype.indexOf.call(sibs,el);
       el.style.setProperty('--i',Math.min(idx,4));
       el.classList.add('reveal');
