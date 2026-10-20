@@ -66,4 +66,18 @@
       ok.hidden=false;
     });
   }
+
+  // Sanftes Einblenden beim Scrollen
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    document.documentElement.classList.add('js');
+    var sel='.sec-head,.area-card,.steps>li,.photo,.three>.card,.split>div,.more>div,.price,.form-grid>*,.career .wrap';
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    document.querySelectorAll('main '+sel.split(',').join(',main ')).forEach(function(el){
+      if(el.closest('.hero')) return;
+      var sibs=el.parentNode.children, idx=Array.prototype.indexOf.call(sibs,el);
+      el.style.setProperty('--i',Math.min(idx,4));
+      el.classList.add('reveal');
+      var r=el.getBoundingClientRect(); if(r.top<innerHeight*0.9&&r.bottom>0) el.classList.add('in'); else io.observe(el);
+    });
+  }
 })();
