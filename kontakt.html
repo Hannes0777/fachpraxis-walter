@@ -27,6 +27,9 @@
       <a href="kontakt.html" aria-current="page">Kontakt</a>
       <a href="anfrage.html" class="nav-cta">Rezept &amp; Termin</a>
     </nav>
+    <button class="search-btn" id="searchBtn" type="button" aria-label="Suche öffnen" aria-haspopup="dialog">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+    </button>
     <button class="menu-btn" id="menuBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="links">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -186,6 +189,18 @@
     <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="https://www.webdesign-ehmann.de" target="_blank" rel="noopener">Erstellt von Webdesign Ehmann</a></nav>
   </div></div>
 </footer>
+
+<div class="search" id="search" role="dialog" aria-modal="true" aria-label="Suche auf dieser Website" hidden>
+  <div class="search-panel">
+    <div class="search-top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+      <input id="searchInput" type="search" placeholder="Suchen, z. B. Rezept, Dry Needling, Öffnungszeiten" autocomplete="off" enterkeyhint="search" aria-label="Suchbegriff">
+      <button type="button" class="search-close" id="searchClose" aria-label="Suche schließen">Schließen</button>
+    </div>
+    <ul class="search-results" id="searchResults" aria-live="polite"></ul>
+    <p class="search-hint" id="searchHint">Tippen Sie einen Begriff. Gesucht wird in allen Seiten der Praxis.</p>
+  </div>
+</div>
 
 <nav class="dock" aria-label="Schnellzugriff">
   <a href="tel:+4971819907607"><b>Anrufen</b><small>07181 9907607</small></a>

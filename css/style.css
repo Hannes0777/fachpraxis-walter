@@ -331,3 +331,25 @@ footer .foot-grid nav{display:block}
 .notice span{font-size:16px;color:var(--ink-2)}
 /* Handy: Portal steht schon in der festen unteren Leiste */
 @media (max-width:820px){.patbar .pat-portal{display:none}.patbar .wrap{justify-content:space-around}}
+
+/* Suche */
+.search-btn{background:none;border:0;color:var(--ink);padding:8px;margin-left:6px;cursor:pointer;border-radius:50%;display:grid;place-items:center}
+.search-btn:hover{background:var(--mint-soft)}
+.links{margin-left:auto}
+@media (max-width:900px){.search-btn{margin-left:auto}.menu-btn{margin-left:0}}
+.search{position:fixed;inset:0;z-index:20;background:rgba(10,24,16,.55);display:flex;justify-content:center;align-items:flex-start;padding:max(12px,env(safe-area-inset-top,0px)) 12px 12px}
+.search[hidden]{display:none}
+.search-panel{background:var(--bg);border:1px solid var(--line);border-radius:16px;width:min(680px,100%);margin-top:6vh;max-height:calc(100dvh - 12vh);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.search-top{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.search-top input{flex:1;min-width:0;font:inherit;font-size:18px;border:0;background:none;color:var(--ink);outline:none;padding:6px 0}
+.search-top input::-webkit-search-cancel-button{display:none}
+.search-close{font:inherit;font-size:14px;background:none;border:1px solid var(--line);color:var(--ink-2);border-radius:999px;padding:5px 12px;cursor:pointer}
+.search-results{list-style:none;margin:0;padding:6px;overflow:auto}
+.search-results a{display:block;text-decoration:none;padding:12px 14px;border-radius:10px}
+.search-results a:hover,.search-results a:focus-visible,.search-results a.sel{background:var(--mint-soft)}
+.search-results b{font-family:var(--f-display);font-weight:400;font-size:20px;display:block;line-height:1.25}
+.search-results .where{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-left:8px;font-family:var(--f-body)}
+.search-results small{display:block;color:var(--ink-2);font-size:14px;line-height:1.5;margin-top:3px}
+.search-results mark{background:color-mix(in srgb,var(--mint) 55%,transparent);color:inherit;border-radius:3px;padding:0 1px}
+.search-hint{padding:14px 18px;color:var(--ink-2);font-size:15px;margin:0}
+.search-hint:empty{display:none}
