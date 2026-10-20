@@ -29,10 +29,12 @@
   // Startseite: Hero streckt sich so, dass die Statusleiste genau am unteren Bildschirmrand endet
   var hero=document.querySelector('.hero'), strip=document.querySelector('.strip');
   if(hero&&strip){
+    var probe=document.createElement('div');probe.setAttribute('aria-hidden','true');probe.style.cssText='position:fixed;left:0;top:0;width:0;height:100svh;visibility:hidden;pointer-events:none';document.body.appendChild(probe);
     var fit=function(){
       hero.style.minHeight='';
       var dock=document.querySelector('.dock'), dh=(dock&&getComputedStyle(dock).display!=='none')?dock.offsetHeight:0;
-      var delta=window.innerHeight-dh-strip.getBoundingClientRect().bottom-window.scrollY;
+      var vh=probe.offsetHeight||window.innerHeight; // kleinste Viewport-Höhe (svh), damit iPhone-Browserleisten nichts verdecken
+      var delta=vh-dh-strip.getBoundingClientRect().bottom-window.scrollY;
       if(delta>0) hero.style.minHeight=(hero.offsetHeight+delta)+'px';
     };
     fit(); window.addEventListener('load',fit); window.addEventListener('resize',fit);
