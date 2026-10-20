@@ -24,7 +24,7 @@
       <a href="index.html" aria-current="page">Start</a>
       <a href="leistungen.html">Leistungen</a>
       <a href="praxis.html">Praxis</a>
-      <a href="index.html#kontakt">Kontakt</a>
+      <a href="kontakt.html">Kontakt</a>
       <a href="anfrage.html" class="nav-cta">Termin anfragen</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="links">
@@ -47,17 +47,19 @@
       </div>
       <figure>
         <img src="img/flur.webp" width="667" height="1000" alt="Flur der Praxis mit Eichenboden und Deckenlampen in Gelb, Aubergine und Rot" fetchpriority="high">
-        <figcaption>Der Flur der Praxis. Die Lampen tragen dieselben Farben wie unser Logo.</figcaption>
+        <figcaption>Der Flur der Praxis. Die Lampen tragen die Farben unseres Logos.</figcaption>
       </figure>
     </div>
   </div>
 
   <div class="strip">
     <div class="wrap">
-      <span class="open-pill" id="openNow"><i></i><span>Therapiezeiten heute</span></span>
-      <span>Rezept online einreichen</span>
-      <span>Heilpraktik auch ohne Rezept</span>
-      <span>Telefon 07181 9907607</span>
+      <p class="status" id="openNow" data-state="closed" role="status"><i aria-hidden="true"></i><b>Therapiezeiten</b><small></small></p>
+      <ul class="facts">
+        <li><a href="anfrage.html">Rezept online einreichen</a></li>
+        <li>Heilpraktik auch ohne Rezept</li>
+        <li><a href="tel:+4971819907607">07181 9907607</a></li>
+      </ul>
     </div>
   </div>
 
@@ -82,7 +84,8 @@
       <div class="praxis-text">
         <p class="eyebrow">Unsere Praxis</p>
         <h2>Eichenboden, freigelegtes Fachwerk, helle Räume</h2>
-        <p>Das Wartezimmer liegt zwischen alten Fachwerkbalken, die Behandlungsräume haben große Holzfenster. Dazu kommt ein eigener Trainingsbereich mit Multifunktionsgerät. Unsere Stärke ist es, alle Fachbereiche eng zu verknüpfen. Das eröffnet eine neue Perspektive der Therapie.</p>
+        <p>Wir verstehen uns als ganzheitliche, interdisziplinäre Therapiepraxis: Physiotherapie, Osteopathie, ganzheitliche Chiropraktik und Trainingstherapie gehen Hand in Hand. Unsere Stärke ist es, alle Fachbereiche eng zu verknüpfen und gegenseitig zu ergänzen. Das eröffnet eine neue Perspektive der Therapie.</p>
+        <p>Das Wartezimmer liegt zwischen alten Fachwerkbalken, die Behandlungsräume haben große Holzfenster, dazu kommt ein eigener Trainingsbereich.</p>
         <a class="more-link" href="praxis.html" style="align-self:flex-start;margin-top:4px">Mehr Einblicke in die Praxis <span aria-hidden="true">→</span></a>
       </div>
       <div class="gallery">
@@ -97,21 +100,9 @@
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Kontakt</p>
-        <h2>So finden Sie uns im Oberdorf</h2>
+        <h2>Oberdorf 4, gegenüber der Michaels Apotheke</h2>
       </div>
-      <div class="split" style="margin-bottom:28px">
-        <figure class="photo"><img src="img/aussen.webp" width="960" height="540" alt="Außenansicht der Praxis in Winterbach mit Fenstern voller Fachbereich-Symbole neben einem Fachwerkhaus" loading="lazy" decoding="async"></figure>
-        <div>
-          <p>Sie finden uns in Winterbach, Oberdorf 4: gegenüber der Michaels Apotheke, an der Durchfahrtsstraße Richtung Schorndorf. Im Fenster im Obergeschoss sehen Sie die vier Symbole unserer Fachbereiche.</p>
-          <p>Im Haus gibt es einen Treppenlift. Wenn Sie Hilfe beim Zugang brauchen, rufen Sie uns kurz an.</p>
-        </div>
-      </div>
-      <div class="three">
-        <div class="card cta-card">
-          <h3>Schnell zur Anfrage</h3>
-          <p>Termin, Rezept oder Befund schicken Sie uns am einfachsten über unser Anfrageformular. Das geht auch außerhalb der Rezeptionszeiten.</p>
-          <a class="btn btn-dark" href="anfrage.html">Zum Formular</a>
-        </div>
+      <div class="three two-up">
         <div class="card">
           <h3>Therapiezeiten</h3>
           <table class="hours" id="hours">
@@ -124,25 +115,16 @@
               <tr data-d="6"><td>Sa, So</td><td class="off">geschlossen</td></tr>
             </tbody>
           </table>
+          <p class="note">Änderungen vorbehalten.</p>
         </div>
-        <div class="card">
-          <h3>Adresse und Telefon</h3>
-          <dl class="kv">
-            <dt>Telefon</dt><dd>07181 9907607</dd><button class="copy" data-copy="07181 9907607">Kopieren</button>
-            <dt>Fax</dt><dd>07181 9907608</dd><span></span>
-            <dt>E-Mail</dt><dd>fachpraxis.winterbach<wbr>@gmail.com</dd><button class="copy" data-copy="fachpraxis.winterbach@gmail.com">Kopieren</button>
-            <dt>Adresse</dt><dd>Oberdorf 4, 73650 Winterbach</dd><span></span>
-          </dl>
-          <div class="row-links"><a class="copy route" href="https://www.google.com/maps/search/?api=1&amp;query=Oberdorf+4+73650+Winterbach" target="_blank" rel="noopener">Route planen</a><a class="copy route" href="https://www.facebook.com/Fachpraxis-für-Physiotherapie-und-Osteopathie-René-Walter-1477940388934166/" target="_blank" rel="noopener">Facebook</a></div>
+        <div class="card cta-card">
+          <h3>Termin oder Rezept</h3>
+          <p>Am einfachsten über das Anfrageformular, auch außerhalb der Rezeptionszeiten. Oder rufen Sie an: <a href="tel:+4971819907607">07181 9907607</a>.</p>
+          <div class="row-links"><a class="btn btn-dark" href="anfrage.html">Zum Formular</a><a class="btn btn-line" href="kontakt.html">Alle Kontaktwege</a></div>
         </div>
       </div>
     </div>
   </section>
-  <div class="career">
-    <div class="wrap">
-      <p><b>Sie sind Therapeutin oder Therapeut?</b> Arbeiten Sie selbstständig in unserer Praxis, ohne Startkapital und mit fertiger Infrastruktur.</p>
-      <a class="btn btn-line" href="https://www.therapie-winterbach.de/einmalige-chance/" target="_blank" rel="noopener">Mehr erfahren</a>
-    </div>
   </div>
 </main>
 

@@ -9,14 +9,33 @@
   var row=document.querySelector('#hours tr[data-d="'+(d===0?6:d)+'"]'); if(row) row.classList.add('today');
   var pill=document.getElementById('openNow');
   if(pill){
-    var txt=pill.querySelector('span');
-    var open=slots[d].some(function(s){return h>=s[0]&&h<s[1];});
-    if(open){txt.textContent='Jetzt geöffnet';}
+    var lbl=pill.querySelector('b'), sub=pill.querySelector('small');
+    var fmt=function(x){var m=Math.round((x%1)*60);return Math.floor(x)+(m?':'+(m<10?'0':'')+m:':00')+' Uhr';};
+    var open=null; (slots[d]||[]).forEach(function(s){if(h>=s[0]&&h<s[1])open=s;});
+    if(open){pill.dataset.state='open';lbl.textContent='Jetzt geöffnet';sub.textContent='bis '+fmt(open[1]);}
     else{
-      var next=slots[d].filter(function(s){return h<s[0];})[0];
-      txt.textContent=next?('Heute wieder ab '+next[0]+':00 Uhr'):'Gerade geschlossen';
-      pill.classList.add('closed');
+      pill.dataset.state='closed';lbl.textContent='Gerade geschlossen';
+      var days=['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+      var txt='';
+      for(var i=0;i<8&&!txt;i++){
+        var dd=(d+i)%7, list=slots[dd]||[];
+        var nx=list.filter(function(s){return i>0||h<s[0];})[0];
+        if(nx) txt=(i===0?'heute':(i===1?'morgen':days[dd]))+' wieder ab '+fmt(nx[0]);
+      }
+      sub.textContent=txt;
     }
+  }
+
+  // Startseite: Hero streckt sich so, dass die Statusleiste genau am unteren Bildschirmrand endet
+  var hero=document.querySelector('.hero'), strip=document.querySelector('.strip');
+  if(hero&&strip){
+    var fit=function(){
+      hero.style.minHeight='';
+      var delta=window.innerHeight-strip.getBoundingClientRect().bottom-window.scrollY;
+      if(delta>0) hero.style.minHeight=(hero.offsetHeight+delta)+'px';
+    };
+    fit(); window.addEventListener('load',fit); window.addEventListener('resize',fit);
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   }
 
   document.querySelectorAll('.copy[data-copy]').forEach(function(b){
