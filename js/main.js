@@ -31,7 +31,8 @@
   if(hero&&strip){
     var fit=function(){
       hero.style.minHeight='';
-      var delta=window.innerHeight-strip.getBoundingClientRect().bottom-window.scrollY;
+      var dock=document.querySelector('.dock'), dh=(dock&&getComputedStyle(dock).display!=='none')?dock.offsetHeight:0;
+      var delta=window.innerHeight-dh-strip.getBoundingClientRect().bottom-window.scrollY;
       if(delta>0) hero.style.minHeight=(hero.offsetHeight+delta)+'px';
     };
     fit(); window.addEventListener('load',fit); window.addEventListener('resize',fit);
