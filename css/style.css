@@ -20,7 +20,7 @@ html{color-scheme:light}body{margin:0}img{max-width:100%;display:block}[hidden]{
   --ink:#E4EEE8; --ink-2:#A6BAAE; --line:#2A3A31; --on-mint:#0E2418;
   --c-blue:#6FA3DC; --c-orange:#F0AE55; --c-violet:#B48BCB; --c-magenta:#DE7AA3; color-scheme:dark}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:104px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
