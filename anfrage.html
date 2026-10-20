@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Termin anfragen | Fachpraxis René Walter Winterbach</title>
+<meta name="description" content="Termin oder Rezept online an die Fachpraxis in Winterbach schicken, auch außerhalb der Rezeptionszeiten. Oder direkt anrufen: 07181 9907607.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="demo">Entwurf von Webdesign Ehmann · Bilder stammen von Ihrer bisherigen Website</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Fachpraxis René Walter, zur Startseite">
+      <span class="dots" aria-hidden="true"><i style="background:var(--c-blue)"></i><i style="background:var(--c-orange)"></i><i style="background:var(--c-violet)"></i><i style="background:var(--c-magenta)"></i></span>
+      <span>Fachpraxis René Walter</span>
+    </a>
+    <nav class="links" id="links" aria-label="Hauptnavigation">
+      <a href="index.html">Start</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="praxis.html">Praxis</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="anfrage.html" class="nav-cta" aria-current="page">Termin anfragen</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="links">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+<div class="page-head"><div class="wrap">
+    <p class="eyebrow">Anfrage</p>
+    <h1>Termin anfragen oder Rezept schicken</h1>
+    <p>Ein Formular für alles, auch außerhalb der Rezeptionszeiten. Telefonisch erreichen Sie uns unter 07181 9907607.</p>
+  </div></div>
+  <section id="anfrage">
+    <div class="wrap">
+      <p class="eyebrow" style="margin-bottom:20px"><span class="example">Beispielinhalte</span></p>
+      <div class="form-grid">
+        <form class="card form" id="contact-form" novalidate>
+          <fieldset class="choice">
+            <legend>Worum geht es?</legend>
+            <label><input type="radio" name="art" id="art-physio" value="physio" checked> Physiotherapie mit Rezept</label>
+            <label><input type="radio" name="art" id="art-hp" value="hp"> Chiropraktik oder Heilpraktik</label>
+            <label><input type="radio" name="art" id="art-rezept" value="rezept"> Rezept oder Befund nachreichen</label>
+          </fieldset>
+          <div class="fields">
+            <label>Name<input id="f-name" name="name" autocomplete="name" placeholder="Maria Beispiel"></label>
+            <label>Telefon<input id="f-tel" name="tel" type="tel" autocomplete="tel" placeholder="0171 2345678"></label>
+            <label class="full">E-Mail<input id="f-mail" name="mail" type="email" autocomplete="email" placeholder="maria@beispiel.de"></label>
+            <label class="full" id="file-row">Rezept oder Befund (Foto oder PDF)<input id="f-file" name="file" type="file" accept="image/*,.pdf"></label>
+            <label class="full">Ihre Nachricht<textarea id="f-msg" name="msg" rows="3" placeholder="Beschwerden, Wunschzeiten, Fragen"></textarea></label>
+          </div>
+          <label class="consent"><input type="checkbox" id="f-ok"> <span>Ich bin mit der Verarbeitung meiner Daten gemäß <a href="datenschutz.html">Datenschutzerklärung</a> einverstanden.</span></label>
+          <p class="err" id="err" role="alert" hidden></p>
+          <button class="btn btn-dark" type="submit">Anfrage senden</button>
+          <p class="ok" id="ok" role="status" hidden>Danke. In der fertigen Website geht Ihre Anfrage jetzt direkt an die Praxis. In diesem Entwurf wird noch nichts verschickt.</p>
+        </form>
+        <div class="side">
+          <div class="card">
+            <h3>Patientenportal</h3>
+            <p>Sie sind bereits in Behandlung? Termine verschieben und Nachrichten an uns schicken Sie über unser Patientenportal.</p>
+            <a class="btn btn-line" href="https://www.therapie-winterbach.de/patienten-kommunikations-portal/" target="_blank" rel="noopener">Zum Portal</a>
+          </div>
+          <div class="card">
+            <h3>Downloads</h3>
+            <ul class="dl">
+              <li><span>Anamnesebogen für Neupatienten</span><small>PDF</small></li>
+              <li><span>Preise Heilpraktik und Stress Release</span><small>PDF</small></li>
+              <li><span>Datenschutzhinweise für Patienten</span><small>PDF</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Fachpraxis für Physiotherapie, Osteopathie und ganzheitliche Chiropraktik René Walter</span>
+    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="https://www.webdesign-ehmann.de" target="_blank" rel="noopener">Erstellt von Webdesign Ehmann</a></nav>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
