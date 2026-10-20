@@ -245,7 +245,7 @@ footer .wrap.foot-top+.wrap{padding-top:18px}
 
 /* Patientenleiste (oben) */
 .patbar{background:var(--mint-soft);border-bottom:1px solid var(--line);font-size:14px}
-.patbar .wrap{display:flex;align-items:center;gap:6px 22px;padding-block:7px;flex-wrap:wrap}
+.patbar .wrap{display:flex;align-items:center;justify-content:flex-end;gap:6px 22px;padding-block:7px;flex-wrap:wrap}
 .patbar-label{color:var(--ink-2);text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:500;margin-right:4px}
 .patbar a{text-decoration:none;font-weight:500;padding-block:2px}
 .patbar a:hover{text-decoration:underline;text-underline-offset:3px}
