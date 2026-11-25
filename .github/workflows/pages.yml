@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir site
           cp -r *.html *.svg css js fonts img downloads admin site/
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: site
       - id: deployment
