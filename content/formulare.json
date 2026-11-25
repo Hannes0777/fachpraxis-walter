@@ -1,0 +1,8 @@
+{
+  "formulare": [
+    { "titel": "Physiotherapie: Anamnese und Datenschutz", "kurz": "Anamnese Physiotherapie", "datei": "downloads/anamnese-physiotherapie.pdf", "fusszeile": true },
+    { "titel": "Chiropraktik: Anamnesebogen", "kurz": "Anamnesebogen Chiropraktik", "datei": "downloads/anamnesebogen-chiropraktik.pdf", "fusszeile": true },
+    { "titel": "Chiropraktik: Einwilligung", "kurz": "Einwilligung Chiropraktik", "datei": "downloads/einwilligung-chiropraktik.pdf", "fusszeile": false },
+    { "titel": "Datenschutzinfo für Neupatienten", "kurz": "Datenschutzinfo Neupatienten", "datei": "downloads/datenschutzinfo-neupatienten.pdf", "fusszeile": false }
+  ]
+}

@@ -360,3 +360,8 @@ footer .foot-grid nav{display:block}
   .patbar a:not(.pat-portal)::after{content:"›";font-size:18px;line-height:1;margin-top:-2px}
   .patbar a:not(.pat-portal):active{transform:translateY(2px);box-shadow:none}
 }
+/* Hinweisleiste (Praxisferien o. Ä.), im CMS ein- und ausschaltbar */
+.hinweis{background:color-mix(in srgb,var(--alert) 9%,var(--surface));border-bottom:2.5px solid var(--alert);color:var(--ink)}
+.hinweis .wrap{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;padding-top:12px;padding-bottom:12px}
+.hinweis b{color:var(--alert);font-size:17px}
+.hinweis span{font-size:16px}

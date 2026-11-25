@@ -4,7 +4,7 @@
   links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
 
   // Therapiezeiten (Mo-Fr, 0 = Sonntag)
-  var slots={1:[[10,13],[14,20]],2:[[8,13]],3:[[8,13],[14,20]],4:[[8,13],[14,20]],5:[[9,13]],6:[],0:[]};
+  /*cms:slots*/var slots={1:[[10,13],[14,20]],2:[[8,13]],3:[[8,13],[14,20]],4:[[8,13],[14,20]],5:[[9,13]],6:[],0:[]};/*/cms:slots*/
   var now=new Date(), d=now.getDay(), h=now.getHours()+now.getMinutes()/60;
   var row=document.querySelector('#hours tr[data-d="'+(d===0?6:d)+'"]'); if(row) row.classList.add('today');
   var pill=document.getElementById('openNow');

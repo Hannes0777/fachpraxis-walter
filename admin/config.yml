@@ -1,0 +1,106 @@
+# ============================================================
+#  Sveltia CMS – Konfiguration für Fachpraxis René Walter
+#  Bearbeitet werden JSON-Dateien im Ordner /content/.
+#  Nach dem Speichern baut Cloudflare die Seite neu (ca. 1 Minute).
+# ============================================================
+
+backend:
+  name: github
+  repo: Hannes0777/fachpraxis-walter
+  branch: main
+  # Eigener Login-Worker nur für diese Website (E-Mail/Passwort, kein GitHub-Konto nötig)
+  base_url: https://cms-auth-fachpraxis-walter.ehmann-hannes07.workers.dev
+
+# Hochgeladene Formulare (PDF) landen in downloads, im Inhalt steht "downloads/dateiname.pdf"
+media_folder: downloads
+public_folder: downloads
+
+locale: de
+
+collections:
+
+  # ----------------------------------------------------------
+  - name: hinweis
+    label: "📢 Hinweis auf der Website"
+    files:
+      - name: hinweis
+        label: "Hinweis (z. B. Praxisferien)"
+        file: content/hinweis.json
+        fields:
+          - { name: aktiv, label: "Hinweis auf allen Seiten anzeigen", widget: boolean, default: false, hint: "Ausgeschaltet: der Hinweis ist nicht zu sehen. Der Text bleibt gespeichert." }
+          - { name: titel, label: "Überschrift", widget: string, hint: "Zum Beispiel: Praxisferien" }
+          - { name: text, label: "Text", widget: text, hint: "Kurz und konkret, zum Beispiel: Vom 24.12. bis 31.12. ist die Praxis geschlossen." }
+
+  # ----------------------------------------------------------
+  - name: zeiten
+    label: "🕘 Zeiten"
+    files:
+      - name: zeiten
+        label: "Therapiezeiten und Telefonzeiten"
+        file: content/zeiten.json
+        fields:
+          - name: therapie
+            label: "Therapiezeiten"
+            widget: object
+            hint: "Schreiben Sie von-bis ohne Uhr. Mehrere Zeiten mit Komma, z. B. 8-13, 14-20. Mit Minuten: 14-18:30. Leer lassen = geschlossen. Die Anzeige 'Jetzt geöffnet' richtet sich danach."
+            fields:
+              - { name: mo, label: "Montag", widget: string, required: false }
+              - { name: di, label: "Dienstag", widget: string, required: false }
+              - { name: mi, label: "Mittwoch", widget: string, required: false }
+              - { name: do, label: "Donnerstag", widget: string, required: false }
+              - { name: fr, label: "Freitag", widget: string, required: false }
+          - name: telefon
+            label: "Telefonisch erreichbar"
+            widget: object
+            hint: "Gleiche Schreibweise wie oben, z. B. 8-13, 14-18:30."
+            fields:
+              - { name: mo, label: "Montag", widget: string, required: false }
+              - { name: di, label: "Dienstag", widget: string, required: false }
+              - { name: mi, label: "Mittwoch", widget: string, required: false }
+              - { name: do, label: "Donnerstag", widget: string, required: false }
+              - { name: fr, label: "Freitag", widget: string, required: false }
+
+  # ----------------------------------------------------------
+  - name: preise
+    label: "💶 Therapieliege"
+    files:
+      - name: preise
+        label: "Preise und Anwendung der Therapieliege"
+        file: content/preise.json
+        fields:
+          - { name: zehnerkarte, label: "Preis 10er-Karte", widget: string, hint: "Mit Euro-Zeichen, z. B. 100 €" }
+          - { name: einzeln, label: "Preis einmalige Anwendung", widget: string, hint: "z. B. 15 €" }
+          - { name: dauer, label: "Dauer", widget: string }
+          - { name: haeufigkeit, label: "Häufigkeit", widget: string }
+
+  # ----------------------------------------------------------
+  - name: formulare
+    label: "📄 Formulare (PDF)"
+    files:
+      - name: formulare
+        label: "Formulare zum Download"
+        file: content/formulare.json
+        fields:
+          - name: formulare
+            label: "Formulare"
+            label_singular: "Formular"
+            widget: list
+            summary: "{{titel}}"
+            hint: "Zum Austauschen eines Formulars die PDF-Datei beim Eintrag neu hochladen. Die Reihenfolge lässt sich per Ziehen ändern."
+            fields:
+              - { name: titel, label: "Name auf der Startseite und im Formular-Bereich", widget: string }
+              - { name: kurz, label: "Kurzname in der Fußzeile", widget: string }
+              - { name: datei, label: "PDF-Datei", widget: file, hint: "Nur PDF" }
+              - { name: fusszeile, label: "Auch in der Fußzeile verlinken", widget: boolean, default: false }
+
+  # ----------------------------------------------------------
+  - name: kontakt
+    label: "☎️ Kontaktdaten"
+    files:
+      - name: kontakt
+        label: "Telefon, Fax und E-Mail"
+        file: content/kontakt.json
+        fields:
+          - { name: telefon, label: "Telefon", widget: string, hint: "So wie auf der Website angezeigt, z. B. 07181 9907607. Wird überall ausgetauscht, auch in Impressum und Datenschutz." }
+          - { name: fax, label: "Fax", widget: string }
+          - { name: email, label: "E-Mail-Adresse", widget: string }
