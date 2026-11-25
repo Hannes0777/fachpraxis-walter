@@ -1,0 +1,34 @@
+name: Seite bauen und veroeffentlichen
+on:
+  push:
+    branches: [master]
+    paths: ["content/**", "*.html", "css/**", "js/**", "admin/**", "downloads/**", "img/**", "_build.js", ".github/workflows/**"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node _build.js
+      - name: Veroeffentlichungsordner zusammenstellen (ohne _src, _build.js, Entwurfsdateien)
+        run: |
+          mkdir site
+          cp -r *.html *.svg css js fonts img downloads admin site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
