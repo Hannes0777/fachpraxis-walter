@@ -7,7 +7,7 @@
 backend:
   name: github
   repo: Hannes0777/fachpraxis-walter
-  branch: main
+  branch: master
   # Eigener Login-Worker nur für diese Website (E-Mail/Passwort, kein GitHub-Konto nötig)
   base_url: https://cms-auth-fachpraxis-walter.ehmann-hannes07.workers.dev
 
